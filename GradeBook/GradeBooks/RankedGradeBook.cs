@@ -23,7 +23,7 @@ namespace GradeBook.GradeBooks
             //Orders list by descending, and the creates a list of just grades for students
             var grades = Students.OrderByDescending(g => g.AverageGrade).Select(g => g.AverageGrade).ToList();
 
-            if(averageGrade > grades[threshold - 1])
+            if(averageGrade >= grades[threshold - 1])
             {
                 return 'A';
             }else if (averageGrade >= grades[(threshold*2)-1]){
